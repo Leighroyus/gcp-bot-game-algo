@@ -6,9 +6,14 @@ app.use(bodyParser.json());
 
 app.post('/', function (req, res) {
   console.log(req.body);
-  console.log("Hello Leigh.Royd!")
+  
   const moves = ['F', 'T', 'L', 'R'];
-  res.send(moves[Math.floor(Math.random() * moves.length)]);
+
+  var moves_to_send = moves[Math.floor(Math.random() * moves.length)]
+
+  console.log("What do these moves look like: " & moves_to_send)
+
+  res.send(moves_to_send);
 });
 
 app.listen(process.env.PORT || 8080);
