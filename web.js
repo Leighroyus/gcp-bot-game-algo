@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.post('/', function (req, res) {
-  console.log(JSON.stringify(req.body));
+  console.log("First req log type:", JSON.stringify(req.body))
+  console.log("Second req log type:", req.body)
   
   const moves = ['F', 'T', 'L', 'R'];
 
