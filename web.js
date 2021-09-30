@@ -28,7 +28,12 @@ app.post('/', function (req, res) {
 
   console.log("My player data:");
   for (var i = 0; i < player_data.length; i++) {
-    console.log("Player data: " + i + ": " + player_data[i]);
+    //console.log("Player data: " + i + ":");
+    Object.entries(player_data[i]).forEach(([key, val]) => {
+
+      console.log("Player data " + key + ": " + val) 
+  
+    });
   }
 
   const moves = ['F', 'T', 'L', 'R'];
