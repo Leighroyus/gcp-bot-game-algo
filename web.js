@@ -26,7 +26,7 @@ app.post('/', function (req, res) {
     console.log("Index: " + i + ": " + player_urls[i]);
 
     for (var j = 0; j < player_data.length; i++) {
-      Object.entries(player_data[i]).forEach(([key, val]) => {
+      Object.entries(player_data[j]).forEach(([key, val]) => {
         console.log("Player " + i + " data, key: " + key + ", value: " + val) 
       });
     }
