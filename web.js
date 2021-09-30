@@ -26,6 +26,11 @@ app.post('/', function (req, res) {
     console.log("Index: " + i + ": " + player_urls[i]);
   }
 
+  console.log("My player data:");
+  for (var i = 0; i < player_data.length; i++) {
+    console.log("Player data: " + i + ": " + player_data[i]);
+  }
+
   const moves = ['F', 'T', 'L', 'R'];
 
   var moves_to_send = moves[Math.floor(Math.random() * moves.length)]
