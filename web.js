@@ -19,6 +19,16 @@ app.post('/', function (req, res) {
   var my_player_y;
   var my_player_direction;
 
+  fs = require('fs')
+
+  console.log('Trying to read from file...')
+  try {
+    const data = fs.readFile('/workspace/data.txt', 'utf8')
+    console.log('My player previous x pos: ' + data)
+  } catch (err) {
+    console.error(err)
+  }
+
   Object.entries(req.body.arena.state).forEach(([key, val]) => {
 
     player_urls.push(key);
@@ -64,11 +74,6 @@ app.post('/', function (req, res) {
   //console.log("What do these moves look like: " + moves_to_send)
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
- 
-  if (my_player_previous_x = my_player_x)
-  {
-    
-  }
 
   if (my_player_direction == 'N')
   {
@@ -118,25 +123,11 @@ app.post('/', function (req, res) {
     }
   }
 
-  fs = require('fs')
-
-  ROOT_APP_PATH = fs.realpathSync('.'); 
-  
-  console.log('Root App path : ' + ROOT_APP_PATH)
-
-  fs.writeFile('/workspace/data.txt', Date(), function (err) {
+  fs.writeFile('/workspace/data.txt', my_player_x, function (err) {
       if (err) 
           return console.log(err);
-      console.log('Timestamp written to file.');
+      console.log('my_player_x written to file.');
   });
-
-  console.log('Trying to read from file...')
-  try {
-    const data = fs.readFile('/workspace/data.txt', 'utf8')
-    console.log(data)
-  } catch (err) {
-    console.error(err)
-  }
 
 });
 
