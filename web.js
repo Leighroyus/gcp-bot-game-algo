@@ -18,7 +18,6 @@ app.post('/', function (req, res) {
   var my_player_x;
   var my_player_y;
   var my_player_direction;
-  var my_player_travel_direction;
 
   my_player_travel_direction = 'E'
 
@@ -73,11 +72,11 @@ app.post('/', function (req, res) {
       res.send('F');
     }
   }
-  if (my_player_x == 6 & current_direction == 'E'){
+  if (my_player_x == 6 & my_player_direction == 'E'){
     res.send('L');
     current_direction = 'W';
   }
-  if (my_player_x == 6 & current_direction == 'W'){
+  if (my_player_x == 6 & my_player_direction == 'W'){
     res.send('L');
   }
   if (my_player_x < 6 & my_player_direction == 'W'){
