@@ -132,7 +132,7 @@ app.post('/', function (req, res) {
 
   console.log('Trying to read from file...')
   try {
-    const data = fs.readFileSync('/workspace/data.txt', 'utf8')
+    const data = fs.readFile('/workspace/data.txt', 'utf8')
     console.log(data)
   } catch (err) {
     console.error(err)
