@@ -38,11 +38,11 @@ app.post('/', function (req, res) {
   */
 
   function loadState() {
-    fs.readFile('/tmp/data.txt', function(err, data) {
+    fs.readFile('/workspace/data.txt', function(err, data) {
       my_player_prev_x = data;
+      console.log('Players previous x pos: ' + my_player_prev_x);
     });
   }
-  console.log('Players previous x pos: ' + my_player_prev_x);
 
   const current_time = new Date();
 
@@ -175,7 +175,7 @@ app.post('/', function (req, res) {
 var fs = require('fs');
 
 function saveState() {
-    fs.writeFile('/tmp/data.txt', my_player_x, () => {});
+    fs.writeFile('/workspace/data.txt', my_player_x, () => {});
     setTimeout(saveState, 10000);
 }
 
