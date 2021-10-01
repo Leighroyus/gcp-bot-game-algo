@@ -175,7 +175,7 @@ app.post('/', function (req, res) {
 var fs = require('fs');
 
 function saveState() {
-    fs.writeFile('/tmp/data.txt', my_player_x);
+    fs.writeFile('/tmp/data.txt', my_player_x, () => {});
     setTimeout(saveState, 10000);
 }
 
