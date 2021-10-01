@@ -120,11 +120,12 @@ app.post('/', function (req, res) {
 
   const fs = require('fs')
 
-  ROOT_APP_PATH = fs.realpathSync('.'); console.log(ROOT_APP_PATH); 
+  ROOT_APP_PATH = fs.realpathSync('.'); 
+  
   console.log('Root App path : ' + ROOT_APP_PATH)
 
   fs = require('fs');
-  fs.writeFile('data.txt', Date(), function (err) {
+  fs.writeFile('ROOT_APP_PATH'+'/data.txt', 'Hello World!', function (err) {
       if (err) 
           return console.log(err);
       console.log('Timestamp written to file.');
