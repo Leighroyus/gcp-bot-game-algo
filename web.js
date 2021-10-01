@@ -34,7 +34,7 @@ app.post('/', function (req, res) {
     console.log("Index: " + i + ": " + player_urls[i]);
 
     Object.entries(player_data).forEach(([key, val]) => {
-        
+  
       console.log("Player " + i + " data, key: " + key + ", value: " + val)
 
         if (i == 2) 
@@ -53,6 +53,10 @@ app.post('/', function (req, res) {
       });
   
   }
+
+  console.log('My player x: ' + my_player_x)
+  console.log('My plater y: ' + my_player_y)
+  console.log('My plater direction: ' + my_player_direction)
 
   //movement test
   //always move right
