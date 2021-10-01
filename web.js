@@ -94,7 +94,7 @@ app.post('/', function (req, res) {
   {
     res.send('T');
     console.log('Throw made!');
-  }
+  } else {
 
   /*
   if (my_player_prev_x == my_player_x)
@@ -156,6 +156,7 @@ app.post('/', function (req, res) {
     }
   }
 
+}
   /*
   fs.writeFile('/workspace/data.txt', my_player_x, function (err) {
       if (err) 
