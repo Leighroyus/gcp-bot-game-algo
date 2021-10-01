@@ -67,11 +67,11 @@ app.post('/', function (req, res) {
 
   if (my_player_direction == 'N')
   {
-    if (my_player_x < 6)
+    if (my_player_x < 5)
     {
       res.send('R');
     }
-    if (my_player_x == 6)
+    if (my_player_x == 5)
     {
       res.send('L');
     }
@@ -79,11 +79,11 @@ app.post('/', function (req, res) {
 
   if (my_player_direction == 'S')
   {
-    if (my_player_x < 6)
+    if (my_player_x < 5)
     {
       res.send('L');
     }
-    if (my_player_x == 6)
+    if (my_player_x == 5)
     {
       res.send('R');
     }
@@ -91,11 +91,11 @@ app.post('/', function (req, res) {
 
   if (my_player_direction == 'E')
   {
-    if (my_player_x < 6)
+    if (my_player_x < 5)
     {
       res.send('F');
     }
-    if (my_player_x == 6)
+    if (my_player_x == 5)
     {
       res.send('L');
     }
