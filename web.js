@@ -28,6 +28,17 @@ app.post('/', function (req, res) {
 
   });
 
+  console.log("My player data:");
+  for (var i = 0; i < player_data.length; i++) {
+    console.log("Player data: " + i + ": " + player_data[i]);
+    //console.log("Player data: " + i + ":");
+    Object.entries(player_data[i]).forEach(([key, val]) => {
+
+      console.log("Player data " + key + ": " + val) 
+
+    });
+  }
+  /*
   console.log("Player URLS:");
   for (var i = 0; i < player_urls.length; i++) {
     
@@ -54,6 +65,7 @@ app.post('/', function (req, res) {
     } 
     
   }
+  */
 
   console.log('My player x: ' + my_player_x)
   console.log('My plater y: ' + my_player_y)
