@@ -59,11 +59,11 @@ app.post('/', function (req, res) {
 
   const moves = ['F', 'T', 'L', 'R'];
 
-  var moves_to_send = moves[Math.floor(Math.random() * moves.length)]
+  //var moves_to_send = moves[Math.floor(Math.random() * moves.length)]
 
-  console.log("What do these moves look like: " + moves_to_send)
+  //console.log("What do these moves look like: " + moves_to_send)
 
-  res.send(moves[Math.floor(Math.random() * moves.length)]);
+  //res.send(moves[Math.floor(Math.random() * moves.length)]);
 
   if (my_player_direction == 'N')
   {
