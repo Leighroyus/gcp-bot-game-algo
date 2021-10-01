@@ -20,17 +20,11 @@ app.post('/', function (req, res) {
   var my_player_y;
   var my_player_direction;
 
-
-  fs = require('fs')
-
-  console.log('Trying to read from file...')
-  try {
-    const data = fs.readFile('/workspace/data.txt', 'utf8')
-    console.log('My player previous x pos: ' + data)
-    my_player_prev_x = data;
-  } catch (err) {
-    console.error(err)
-  }
+  var fs = require('fs');
+  var path = process.cwd();
+  var buffer = fs.readFileSync("/workspace/data.txt");
+  my_player_prev_x = buffer.toString()
+  console.log('Players previous x pos: ' + my_player_prev_x);
 
   Object.entries(req.body.arena.state).forEach(([key, val]) => {
 
