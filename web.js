@@ -14,6 +14,14 @@ app.post('/', function (req, res) {
   var player_urls = [];
   var player_data = [];
 
+  //temp my player x and y
+  var my_player_x;
+  var my_player_y;
+  var my_player_direction;
+  var my_player_travel_direction;
+
+  my_player_travel_direction = 'E'
+
   Object.entries(req.body.arena.state).forEach(([key, val]) => {
 
     player_urls.push(key);
@@ -27,11 +35,27 @@ app.post('/', function (req, res) {
 
     for (var j = 0; j < player_data.length; j++) {
       Object.entries(player_data[j]).forEach(([key, val]) => {
-        console.log("Player " + i + " data, key: " + key + ", value: " + val) 
+        console.log("Player " + i + " data, key: " + key + ", value: " + val)
+
+        if (i == 2) {
+          if (key == 'x'){
+            my_player_x = value;
+          }
+          if (key == 'y') {
+            my_player_y = value;
+          }
+          if (key == 'direction') {
+            my_player_direction = value; 
+          }
+        }
+
       });
     }
 
   }
+
+  //movement test
+  //always move right
 
   const moves = ['F', 'T', 'L', 'R'];
 
@@ -39,7 +63,32 @@ app.post('/', function (req, res) {
 
   //console.log("What do these moves look like: " + moves_to_send)
 
-  res.send(moves[Math.floor(Math.random() * moves.length)]);
+  //res.send(moves[Math.floor(Math.random() * moves.length)]);
+
+  if (my_player_x < 6 & my_player_direction == 'E'){
+    if (my_player_direction != 'E') {
+      res.send('R');
+    }
+    if (my_player_direction == 'E') {
+      res.send('F');
+    }
+  }
+  if (my_player_x == 6 & current_direction == 'E'){
+    res.send('L');
+    current_direction = 'W';
+  }
+  if (my_player_x == 6 & current_direction == 'W'){
+    res.send('L');
+  }
+  if (my_player_x < 6 & my_player_direction == 'W'){
+    if (my_player_direction != 'W') {
+      res.send('L');
+    }
+    if (my_player_direction == 'W') {
+      res.send('F');
+    }
+  }
+
 });
 
 app.listen(process.env.PORT || 8080);
