@@ -63,10 +63,11 @@ app.post('/', function (req, res) {
 
   var moves_to_send = moves[Math.floor(Math.random() * moves.length)]
 
-  //console.log("What do these moves look like: " + moves_to_send)
+  console.log("What do these moves look like: " + moves_to_send)
 
-  //res.send(moves[Math.floor(Math.random() * moves.length)]);
+  res.send(moves[Math.floor(Math.random() * moves.length)]);
 
+  /*
   if (my_player_x < 6 & my_player_direction == 'E'){
     if (my_player_direction != 'E') {
       res.send('R');
@@ -90,6 +91,7 @@ app.post('/', function (req, res) {
       res.send('F');
     }
   }
+  */
 
 });
 
