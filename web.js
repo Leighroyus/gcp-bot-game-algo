@@ -33,8 +33,9 @@ app.post('/', function (req, res) {
     
     console.log("Index: " + i + ": " + player_urls[i]);
 
-    Object.entries(player_data[i]).forEach(([key, val]) => {
-        console.log("Player " + i + " data, key: " + key + ", value: " + val)
+    Object.entries(player_data).forEach(([key, val]) => {
+        
+      console.log("Player " + i + " data, key: " + key + ", value: " + val)
 
         /*  
         if (i == 2) {
