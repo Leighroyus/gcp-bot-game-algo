@@ -16,8 +16,10 @@ app.post('/', function (req, res) {
 
   //temp my player x and y
   var my_player_x;
+  var my_player_prev_x;
   var my_player_y;
   var my_player_direction;
+
 
   fs = require('fs')
 
@@ -25,6 +27,7 @@ app.post('/', function (req, res) {
   try {
     const data = fs.readFile('/workspace/data.txt', 'utf8',function (err, data))
     console.log('My player previous x pos: ' + data)
+    my_player_prev_x = data;
   } catch (err) {
     console.error(err)
   }
@@ -74,6 +77,15 @@ app.post('/', function (req, res) {
   //console.log("What do these moves look like: " + moves_to_send)
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
+
+  if (my_player_prev_x == my_player_x)
+  {
+    if (my_player_x != 0 & my_player_x != 5)
+    {
+      res.send('T');
+      console.log('I am stuck by another player so time to throw!')
+    }
+  }
 
   if (my_player_direction == 'N')
   {
