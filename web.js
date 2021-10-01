@@ -64,6 +64,11 @@ app.post('/', function (req, res) {
   //console.log("What do these moves look like: " + moves_to_send)
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
+ 
+  if (my_player_previous_x = my_player_x)
+  {
+    
+  }
 
   if (my_player_direction == 'N')
   {
@@ -112,7 +117,13 @@ app.post('/', function (req, res) {
       res.send('R');
     }
   }
-  
+
+  fs = require('fs');
+  fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
+      if (err) 
+          return console.log(err);
+      console.log('Wrote Hello World in file helloworld.txt, just check it');
+  });
 
 });
 
