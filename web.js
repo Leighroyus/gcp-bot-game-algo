@@ -164,14 +164,15 @@ app.post('/', function (req, res) {
   }
 
 }
-  /*
+  
   fs.writeFile('/workspace/data.txt', my_player_x, function (err) {
       if (err) 
           return console.log(err);
       console.log('my_player_x written to file.');
   });
-  */
+  
 
+/*
 var fs = require('fs');
 
 function saveState() {
@@ -180,7 +181,7 @@ function saveState() {
 }
 
 setTimeout(saveState, 10000);
-
+*/
 });
 
 app.listen(process.env.PORT || 8080);
