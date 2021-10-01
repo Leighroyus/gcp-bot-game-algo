@@ -33,13 +33,17 @@ app.post('/', function (req, res) {
     
     console.log("Index: " + i + ": " + player_urls[i]);
 
-    Object.entries(player_data).forEach(([key, val]) => {
-  
+    player_data_single = player_data[i]
+
+    for (var j = 0; j < player_data_single.length; j++)
+    {
+    Object.entries(player_data_single).forEach(([key, val]) => 
+    {
       console.log("Player " + i + " data, key: " + key + ", value: " + val)
 
         if (i == 2) 
         {
-          if (key == 'x'){
+          if (key == 'x') {
             my_player_x = val;
           }
           if (key == 'y') {
@@ -49,9 +53,8 @@ app.post('/', function (req, res) {
             my_player_direction = val; 
           }
         }
-        
-      });
-  
+      } 
+    }
   }
 
   console.log('My player x: ' + my_player_x)
