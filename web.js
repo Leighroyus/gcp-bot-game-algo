@@ -25,7 +25,7 @@ app.post('/', function (req, res) {
 
   console.log('Trying to read from file...')
   try {
-    const data = fs.readFile('/workspace/data.txt', 'utf8',function (err, data))
+    const data = fs.readFile('/workspace/data.txt', 'utf8')
     console.log('My player previous x pos: ' + data)
     my_player_prev_x = data;
   } catch (err) {
@@ -77,7 +77,7 @@ app.post('/', function (req, res) {
   //console.log("What do these moves look like: " + moves_to_send)
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
-  
+
   console.log('WTF!?')
   if (my_player_prev_x.toString() == my_player_x.toString())
   {
