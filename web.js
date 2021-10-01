@@ -78,7 +78,7 @@ app.post('/', function (req, res) {
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
 
-  if (my_player_prev_x == my_player_x)
+  if (my_player_prev_x.toString() == my_player_x.toString())
   {
     console.log('X coords have not moved!')
     if (my_player_x != 0 & my_player_x != 5)
