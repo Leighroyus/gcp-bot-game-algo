@@ -28,8 +28,9 @@ app.post('/', function (req, res) {
   var my_player_direction;
   var my_player_make_a_throw;
 
-  /*
+  
   var fs = require('fs');
+  /*
   var path = process.cwd();
   var buffer = fs.readFileSync("/workspace/data.txt");
   my_player_prev_x = buffer.toString()
