@@ -30,12 +30,13 @@ app.post('/', function (req, res) {
 
   console.log("Player URLS:");
   for (var i = 0; i < player_urls.length; i++) {
+    
     console.log("Index: " + i + ": " + player_urls[i]);
 
-  
-      Object.entries(player_data[i]).forEach(([key, val]) => {
+    Object.entries(player_data[i]).forEach(([key, val]) => {
         console.log("Player " + i + " data, key: " + key + ", value: " + val)
 
+        /*  
         if (i == 2) {
           if (key == 'x'){
             my_player_x = value;
@@ -47,10 +48,10 @@ app.post('/', function (req, res) {
             my_player_direction = value; 
           }
         }
-
+        */
+        
       });
-    
-
+  
   }
 
   //movement test
