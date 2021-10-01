@@ -37,10 +37,12 @@ app.post('/', function (req, res) {
   console.log('Players previous x pos: ' + my_player_prev_x);
   */
 
-  var now = new Date();
+  const current_time = new Date();
 
-  my_player_make_a_throw = isEven(Date.getSeconds())
-  console.log('Make a throw: ' + isEven(Date.getSeconds()))
+  //console.log(current_time.getSeconds());
+
+  my_player_make_a_throw = isEven(current_time.getSeconds())
+  console.log('Make a throw: ' + isEven(current_time.getSeconds()))
 
   Object.entries(req.body.arena.state).forEach(([key, val]) => {
 
