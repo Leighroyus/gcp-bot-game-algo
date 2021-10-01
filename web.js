@@ -107,13 +107,12 @@ app.post('/', function (req, res) {
   if (my_player_prev_x == my_player_x)
   {
     //console.log('X coords have not moved!')
-    if (my_player_x != 0 & my_player_x != 5)
-    {
+    //if (my_player_x != 0 & my_player_x != 5)
+    //{
       //res.send('T');
       console.log('I am stuck by another player so time to throw!')
-    }
+    //}
   }
-  
 
   if (my_player_direction == 'N')
   {
