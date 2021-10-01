@@ -77,7 +77,8 @@ app.post('/', function (req, res) {
   //console.log("What do these moves look like: " + moves_to_send)
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
-
+  
+  console.log('WTF!?')
   if (my_player_prev_x.toString() == my_player_x.toString())
   {
     console.log('X coords have not moved!')
