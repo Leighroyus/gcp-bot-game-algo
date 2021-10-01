@@ -96,7 +96,8 @@ app.post('/', function (req, res) {
   //console.log("What do these moves look like: " + moves_to_send)
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
-
+  console.log('Length of my_player_prev_x: ' + my_player_prev_x)
+  console.log('Length of my_player_x: ' + my_player_x)
   if (String(my_player_prev_x) == String(my_player_x))
   {
     //console.log('X coords have not moved!')
