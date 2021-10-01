@@ -37,6 +37,12 @@ app.post('/', function (req, res) {
   console.log('Players previous x pos: ' + my_player_prev_x);
   */
 
+  function loadState() {
+    fs.readFile('/tmp/data.txt', function(err, data) {
+      my_player_prev_x = data;
+    });
+  }
+
   const current_time = new Date();
 
   //console.log(current_time.getSeconds());
@@ -164,6 +170,15 @@ app.post('/', function (req, res) {
       console.log('my_player_x written to file.');
   });
   */
+
+var fs = require('fs');
+
+function saveState() {
+    fs.writeFile('/tmp/data.txt', my_player_x);
+    setTimeout(saveState, 10000);
+}
+
+setTimeout(saveState, 10000);
 
 });
 
