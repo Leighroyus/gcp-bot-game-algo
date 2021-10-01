@@ -156,11 +156,13 @@ app.post('/', function (req, res) {
     }
   }
 
+  /*
   fs.writeFile('/workspace/data.txt', my_player_x, function (err) {
       if (err) 
           return console.log(err);
       console.log('my_player_x written to file.');
   });
+  */
 
 });
 
