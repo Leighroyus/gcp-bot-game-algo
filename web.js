@@ -28,15 +28,14 @@ app.post('/', function (req, res) {
 
   });
 
-  console.log("My player data:");
   for (var i = 0; i < player_data.length; i++) {
-    console.log("Player data: " + i + ": " + player_data[i]);
-    //console.log("Player data: " + i + ":");
+    
+    console.log("Player name: " + i + ": " + player_urls[i]);
+
     Object.entries(player_data[i]).forEach(([key, val]) => {
-
-      console.log("Player data " + key + ": " + val) 
-
+        console.log("Player data " + key + ": " + val) 
     });
+
   }
   /*
   console.log("Player URLS:");
