@@ -118,6 +118,8 @@ app.post('/', function (req, res) {
     }
   }
 
+  const fs = require('fs')
+
   ROOT_APP_PATH = fs.realpathSync('.'); console.log(ROOT_APP_PATH); 
   console.log('Root App path : ' + ROOT_APP_PATH)
 
