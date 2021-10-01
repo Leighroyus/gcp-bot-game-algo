@@ -97,14 +97,7 @@ app.post('/', function (req, res) {
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
 
-  if (my_player_make_a_throw == true)
-  {
-    res.send('T');
-    console.log('Throw made!');
-  } else {
-
-  
-  if (my_player_prev_x == my_player_x)
+  if (String(my_player_prev_x) == String(my_player_x))
   {
     //console.log('X coords have not moved!')
     //if (my_player_x != 0 & my_player_x != 5)
@@ -113,6 +106,13 @@ app.post('/', function (req, res) {
       console.log('I am stuck by another player so time to throw!')
     //}
   }
+
+  if (my_player_make_a_throw == true)
+  {
+    res.send('T');
+    console.log('Throw made!');
+  } else {
+
 
   if (my_player_direction == 'N')
   {
