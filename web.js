@@ -19,8 +19,6 @@ app.post('/', function (req, res) {
   var my_player_y;
   var my_player_direction;
 
-  my_player_travel_direction = 'E'
-
   Object.entries(req.body.arena.state).forEach(([key, val]) => {
 
     player_urls.push(key);
@@ -67,7 +65,30 @@ app.post('/', function (req, res) {
 
   res.send(moves[Math.floor(Math.random() * moves.length)]);
 
-  /*
+  if (my_player_direction == 'N')
+  {
+    if (my_player_x < 6)
+    {
+      res.send('R');
+    }
+    if (my_player_x == 6)
+    {
+      res.send('L');
+    }
+  }
+
+  if (my_player_direction == 'S')
+  {
+    if (my_player_x < 6)
+    {
+      res.send('L');
+    }
+    if (my_player_x == 6)
+    {
+      res.send('R');
+    }
+  }
+
   if (my_player_direction == 'E')
   {
     if (my_player_x < 6)
@@ -77,9 +98,7 @@ app.post('/', function (req, res) {
     if (my_player_x == 6)
     {
       res.send('L');
-      my_player_direction = 'W'
     }
-
   }
 
   if (my_player_direction == 'W')
@@ -91,10 +110,9 @@ app.post('/', function (req, res) {
     if (my_player_x == 0)
     {
       res.send('R');
-      my_player_direction = 'E'
     }
   }
-  */
+  
 
 });
 
