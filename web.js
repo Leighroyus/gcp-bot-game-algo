@@ -35,8 +35,6 @@ app.post('/', function (req, res) {
 
     player_data_single = player_data[i]
 
-    for (var j = 0; j < player_data_single.length; j++)
-    {
     Object.entries(player_data_single).forEach(([key, val]) => 
     {
       console.log("Player " + i + " data, key: " + key + ", value: " + val)
@@ -53,8 +51,8 @@ app.post('/', function (req, res) {
             my_player_direction = val; 
           }
         }
-      } 
-    }
+    } 
+    
   }
 
   console.log('My player x: ' + my_player_x)
