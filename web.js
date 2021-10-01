@@ -42,6 +42,7 @@ app.post('/', function (req, res) {
       my_player_prev_x = data;
     });
   }
+  console.log('Players previous x pos: ' + my_player_prev_x);
 
   const current_time = new Date();
 
