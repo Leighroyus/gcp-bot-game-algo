@@ -37,6 +37,8 @@ app.post('/', function (req, res) {
   console.log('Players previous x pos: ' + my_player_prev_x);
   */
 
+  var now = new Date();
+
   my_player_make_a_throw = isEven(Date.getSeconds())
   console.log('Make a throw: ' + isEven(Date.getSeconds()))
 
