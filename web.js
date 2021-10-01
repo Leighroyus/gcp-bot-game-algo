@@ -40,13 +40,13 @@ app.post('/', function (req, res) {
         if (i == 2) 
         {
           if (key == 'x'){
-            my_player_x = value;
+            my_player_x = val;
           }
           if (key == 'y') {
-            my_player_y = value;
+            my_player_y = val;
           }
           if (key == 'direction') {
-            my_player_direction = value; 
+            my_player_direction = val; 
           }
         }
         
