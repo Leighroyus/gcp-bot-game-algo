@@ -118,12 +118,23 @@ app.post('/', function (req, res) {
     }
   }
 
+  ROOT_APP_PATH = fs.realpathSync('.'); console.log(ROOT_APP_PATH); 
+  console.log('Root App path : ' + ROOT_APP_PATH)
+
   fs = require('fs');
-  fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
+  fs.writeFile('data.txt', Date(), function (err) {
       if (err) 
           return console.log(err);
-      console.log('Wrote Hello World in file helloworld.txt, just check it');
+      console.log('Timestamp written to file.');
   });
+
+  console.log('Trying to read from file...')
+  try {
+    const data = fs.readFileSync('ROOT_APP_PATH'+'/data.txt', 'utf8')
+    console.log(data)
+  } catch (err) {
+    console.error(err)
+  }
 
 });
 
