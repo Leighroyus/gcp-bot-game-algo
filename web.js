@@ -124,7 +124,6 @@ app.post('/', function (req, res) {
   
   console.log('Root App path : ' + ROOT_APP_PATH)
 
-  fs = require('fs');
   fs.writeFile('ROOT_APP_PATH'+'/data.txt', 'Hello World!', function (err) {
       if (err) 
           return console.log(err);
