@@ -47,42 +47,14 @@ app.post('/', function (req, res) {
             my_player_direction = val; 
           }
         }
-        
+
     });
 
   }
-  /*
-  console.log("Player URLS:");
-  for (var i = 0; i < player_urls.length; i++) {
-    
-    console.log("Index: " + i + ": " + player_urls[i]);
-
-    player_data_single = player_data[i]
-
-    Object.entries(player_data_single).forEach(([key, val]) => 
-    {
-      console.log("Player " + i + " data, key: " + key + ", value: " + val)
-
-        if (i == 2) 
-        {
-          if (key == 'x') {
-            my_player_x = val;
-          }
-          if (key == 'y') {
-            my_player_y = val;
-          }
-          if (key == 'direction') {
-            my_player_direction = val; 
-          }
-        }
-    } 
-    
-  }
-  */
 
   console.log('My player x: ' + my_player_x)
-  console.log('My plater y: ' + my_player_y)
-  console.log('My plater direction: ' + my_player_direction)
+  console.log('My player y: ' + my_player_y)
+  console.log('My player direction: ' + my_player_direction)
 
   //movement test
   //always move right
