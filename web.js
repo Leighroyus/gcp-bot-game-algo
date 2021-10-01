@@ -118,13 +118,13 @@ app.post('/', function (req, res) {
     }
   }
 
-  const fs = require('fs')
+  fs = require('fs')
 
   ROOT_APP_PATH = fs.realpathSync('.'); 
   
   console.log('Root App path : ' + ROOT_APP_PATH)
 
-  fs.writeFile('ROOT_APP_PATH'+'/data.txt', 'Hello World!', function (err) {
+  fs.writeFile(ROOT_APP_PATH+'/data.txt', Date(), function (err) {
       if (err) 
           return console.log(err);
       console.log('Timestamp written to file.');
@@ -132,7 +132,7 @@ app.post('/', function (req, res) {
 
   console.log('Trying to read from file...')
   try {
-    const data = fs.readFileSync('ROOT_APP_PATH'+'/data.txt', 'utf8')
+    const data = fs.readFileSync(ROOT_APP_PATH+'/data.txt', 'utf8')
     console.log(data)
   } catch (err) {
     console.error(err)
