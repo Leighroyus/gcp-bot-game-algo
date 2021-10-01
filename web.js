@@ -80,6 +80,7 @@ app.post('/', function (req, res) {
 
   if (my_player_prev_x == my_player_x)
   {
+    console.log('X coords have not moved!')
     if (my_player_x != 0 & my_player_x != 5)
     {
       res.send('T');
