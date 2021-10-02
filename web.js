@@ -5,6 +5,8 @@ function isEven(value){
       return false;
 };
 
+counter = 1;
+
 const express = require('express');
 const app = express();
 
@@ -171,6 +173,9 @@ app.post('/', function (req, res) {
       console.log('my_player_x written to file.');
   });
   
+console.log('This is a global variable test: ' + counter)
+
+counter = counter +1;
 
 /*
 var fs = require('fs');
