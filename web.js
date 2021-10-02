@@ -90,7 +90,22 @@ app.post('/', function (req, res) {
       //res.send('T');
       console.log('I am stuck by another player!')
       //bottom of screen?
-      if (my_player_y == 0)
+      if (my_player_y == 4)
+      {
+          if (my_player_direction == 'E')
+          {
+            res.send('L');
+          }
+          if (my_player_direction == 'W')
+          {
+            res.send('R');
+          }
+          if (my_player_direction == 'N')
+          {
+            res.send('F');
+          }
+      }
+      if (my_player_y == 3)
       {
           if (my_player_direction == 'E')
           {
@@ -109,21 +124,6 @@ app.post('/', function (req, res) {
       {
           if (my_player_direction == 'E')
           {
-            res.send('L');
-          }
-          if (my_player_direction == 'W')
-          {
-            res.send('R');
-          }
-          if (my_player_direction == 'N')
-          {
-            res.send('F');
-          }
-      }
-      if (my_player_y == 2)
-      {
-          if (my_player_direction == 'E')
-          {
             res.send('R');
           }
           if (my_player_direction == 'W')
@@ -135,7 +135,7 @@ app.post('/', function (req, res) {
             res.send('F');
           }
       }
-      if (my_player_y == 3)
+      if (my_player_y == 1)
       {
           if (my_player_direction == 'E')
           {
