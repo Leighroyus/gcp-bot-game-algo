@@ -38,7 +38,7 @@ app.post('/', function (req, res) {
   */
 
   //function loadState() {
-    fs.readFile('/workspace/data.txt', function(err, data) {
+    fs.readFileSync('/workspace/data.txt', function(err, data) {
       my_player_prev_x = data;
       console.log('Players previous x pos: ' + my_player_prev_x);
     });
