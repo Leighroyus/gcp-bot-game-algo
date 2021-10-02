@@ -96,10 +96,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('L');
+            res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('R');
+            res.send('T');
           }
           if (my_player_direction == 'N')
           {
@@ -112,10 +114,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('L');
+            res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('R');
+            res.send('T');
           }
           if (my_player_direction == 'N')
           {
@@ -128,10 +132,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('R');
+            res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('L');
+            res.send('T');
           }
           if (my_player_direction == 'S')
           {
@@ -144,10 +150,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('R');
+            res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('L');
+            res.send('T');
           }
           if (my_player_direction == 'S')
           {
@@ -171,10 +179,12 @@ app.post('/', function (req, res) {
     if (my_player_x < 5)
     {
       res.send('R');
+      res.send('T');
     }
     if (my_player_x == 5)
     {
       res.send('L');
+      res.send('T');
     }
   }
 
@@ -183,10 +193,12 @@ app.post('/', function (req, res) {
     if (my_player_x < 5)
     {
       res.send('L');
+      res.send('T');
     }
     if (my_player_x == 5)
     {
       res.send('R');
+      res.send('T');
     }
   }
 
@@ -195,10 +207,12 @@ app.post('/', function (req, res) {
     if (my_player_x < 5)
     {
       res.send('F');
+      res.send('T');
     }
     if (my_player_x == 5)
     {
       res.send('L');
+      res.send('T');
     }
   }
 
@@ -207,10 +221,12 @@ app.post('/', function (req, res) {
     if (my_player_x > 0)
     {
       res.send('F');
+      res.send('T');
     }
     if (my_player_x == 0)
     {
       res.send('R');
+      res.send('T');
     }
   }
 
