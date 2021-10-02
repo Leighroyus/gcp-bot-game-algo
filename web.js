@@ -120,7 +120,7 @@ app.post('/', function (req, res) {
             res.send('F');
           }
       }
-      if (my_player_y == 1)
+      if (my_player_y == 2)
       {
           if (my_player_direction == 'E')
           {
