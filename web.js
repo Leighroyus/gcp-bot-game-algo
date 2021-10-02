@@ -5,7 +5,7 @@ function isEven(value){
       return false;
 };
 
-counter = 1;
+my_player_prev_x = 999;
 
 const express = require('express');
 const app = express();
@@ -25,28 +25,10 @@ app.post('/', function (req, res) {
 
   //temp my player x and y
   var my_player_x;
-  var my_player_prev_x;
+  //var my_player_prev_x;
   var my_player_y;
   var my_player_direction;
   var my_player_make_a_throw;
-
-  
-  //var fs = require('fs');
-  /*
-  var path = process.cwd();
-  var buffer = fs.readFileSync("/workspace/data.txt");
-  my_player_prev_x = buffer.toString()
-  console.log('Players previous x pos: ' + my_player_prev_x);
-  */
-
-  /*
-  //function loadState() {
-    fs.readFileSync('/workspace/data.txt', function(err, data) {
-      my_player_prev_x = data;
-      console.log('Players previous x pos: ' + my_player_prev_x);
-    });
-  //}
-  */
 
   const current_time = new Date();
 
@@ -100,7 +82,7 @@ app.post('/', function (req, res) {
   //console.log("What do these moves look like: " + moves_to_send)
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
-  /*
+  
   console.log('Length of my_player_prev_x: ' + my_player_prev_x)
   console.log('Length of my_player_x: ' + my_player_x)
   if (String(my_player_prev_x) == String(my_player_x))
@@ -112,7 +94,7 @@ app.post('/', function (req, res) {
       console.log('I am stuck by another player so time to throw!')
     //}
   }
-  */
+  
   if (my_player_make_a_throw == true)
   {
     res.send('T');
@@ -169,29 +151,9 @@ app.post('/', function (req, res) {
   }
 
 }
-  
-/*
-  fs.writeFile('/workspace/data.txt', my_player_x, function (err) {
-      if (err) 
-          return console.log(err);
-      console.log('my_player_x written to file.');
-  });
- */ 
 
-console.log('This is a global variable test: ' + counter)
+my_player_prev_x = my_player_x;
 
-counter = counter +1;
-
-/*
-var fs = require('fs');
-
-function saveState() {
-    fs.writeFile('/workspace/data.txt', my_player_x, () => {});
-    setTimeout(saveState, 10000);
-}
-
-setTimeout(saveState, 10000);
-*/
 });
 
 app.listen(process.env.PORT || 8080);
