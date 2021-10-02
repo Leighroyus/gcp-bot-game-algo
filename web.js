@@ -84,7 +84,7 @@ app.post('/', function (req, res) {
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
   
-  if (my_player_prev_x == my_player_x & my_player_stuck_counter >= 3)
+  if (my_player_prev_x == my_player_x & my_player_stuck_counter >= 4)
   {
     if (my_player_x != 0 & my_player_x != 5)
     {
