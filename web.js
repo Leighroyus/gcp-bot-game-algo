@@ -103,7 +103,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'N')
           {
-            my_player_stuck_counter =1;
+            //my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -119,7 +119,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'N')
           {
-            my_player_stuck_counter =1;
+            //my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -135,7 +135,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'S')
           {
-            my_player_stuck_counter =1;
+            //my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -151,7 +151,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'S')
           {
-            my_player_stuck_counter =1;
+            //my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -218,6 +218,10 @@ app.post('/', function (req, res) {
 
 my_player_prev_x = my_player_x;
 my_player_stuck_counter = my_player_stuck_counter +1;
+if ((my_player_stuck_counter % 5) == 0)
+{
+  my_player_stuck_counter = 1;
+}
 
 });
 
