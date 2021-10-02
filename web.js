@@ -6,6 +6,7 @@ function isEven(value){
 };
 
 my_player_prev_x = 999;
+my_player_stuck_counter = 1;
 
 const express = require('express');
 const app = express();
@@ -83,7 +84,7 @@ app.post('/', function (req, res) {
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
   
-  if (my_player_prev_x == my_player_x)
+  if (my_player_prev_x == my_player_x & my_player_stuck_counter == 3)
   {
     if (my_player_x != 0 & my_player_x != 5)
     {
@@ -102,6 +103,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'N')
           {
+            my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -117,6 +119,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'N')
           {
+            my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -132,6 +135,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'S')
           {
+            my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -147,6 +151,7 @@ app.post('/', function (req, res) {
           }
           if (my_player_direction == 'S')
           {
+            my_player_stuck_counter =1;
             res.send('F');
           }
       }
@@ -212,6 +217,7 @@ app.post('/', function (req, res) {
 }
 
 my_player_prev_x = my_player_x;
+my_player_stuck_counter = my_player_stuck_counter +1;
 
 });
 
