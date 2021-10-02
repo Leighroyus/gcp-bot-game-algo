@@ -83,16 +83,75 @@ app.post('/', function (req, res) {
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
   
-  console.log('Length of my_player_prev_x: ' + my_player_prev_x)
-  console.log('Length of my_player_x: ' + my_player_x)
-  if (String(my_player_prev_x) == String(my_player_x))
+  if (my_player_prev_x == my_player_x)
   {
-    //console.log('X coords have not moved!')
-    //if (my_player_x != 0 & my_player_x != 5)
-    //{
+    if (my_player_x != 0 & my_player_x != 5)
+    {
       //res.send('T');
-      console.log('I am stuck by another player so time to throw!')
-    //}
+      console.log('I am stuck by another player!')
+      //bottom of screen?
+      if (my_player_y == 0)
+      {
+          if (my_player_direction == 'E')
+          {
+            res.send('L');
+          }
+          if (my_player_direction == 'W')
+          {
+            res.send('R');
+          }
+          if (my_player_direction == 'N')
+          {
+            res.send('F');
+          }
+      }
+      if (my_player_y == 1)
+      {
+          if (my_player_direction == 'E')
+          {
+            res.send('L');
+          }
+          if (my_player_direction == 'W')
+          {
+            res.send('R');
+          }
+          if (my_player_direction == 'N')
+          {
+            res.send('F');
+          }
+      }
+      if (my_player_y == 2)
+      {
+          if (my_player_direction == 'E')
+          {
+            res.send('R');
+          }
+          if (my_player_direction == 'W')
+          {
+            res.send('L');
+          }
+          if (my_player_direction == 'S')
+          {
+            res.send('F');
+          }
+      }
+      if (my_player_y == 3)
+      {
+          if (my_player_direction == 'E')
+          {
+            res.send('R');
+          }
+          if (my_player_direction == 'W')
+          {
+            res.send('L');
+          }
+          if (my_player_direction == 'S')
+          {
+            res.send('F');
+          }
+      }
+
+    }
   }
   
   if (my_player_make_a_throw == true)
