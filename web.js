@@ -86,11 +86,47 @@ app.post('/', function (req, res) {
   
   if (my_player_prev_x == my_player_x & my_player_stuck_counter >= 4)
   {
-    if (my_player_x != 0 & my_player_x != 5)
+    if (my_player_x != 0 & my_player_x != 8)
     {
       //res.send('T');
       console.log('I am stuck by another player!')
       //bottom of screen?
+      if (my_player_y == 5)
+      {
+          if (my_player_direction == 'E')
+          {
+            res.send('L');
+            res.send('T');
+          }
+          if (my_player_direction == 'W')
+          {
+            res.send('R');
+            res.send('T');
+          }
+          if (my_player_direction == 'N')
+          {
+            //my_player_stuck_counter =1;
+            res.send('F');
+          }
+      }
+      if (my_player_y == 4)
+      {
+          if (my_player_direction == 'E')
+          {
+            res.send('L');
+            res.send('T');
+          }
+          if (my_player_direction == 'W')
+          {
+            res.send('R');
+            res.send('T');
+          }
+          if (my_player_direction == 'N')
+          {
+            //my_player_stuck_counter =1;
+            res.send('F');
+          }
+      }
       if (my_player_y == 3)
       {
           if (my_player_direction == 'E')
@@ -111,21 +147,21 @@ app.post('/', function (req, res) {
       }
       if (my_player_y == 2)
       {
-          if (my_player_direction == 'E')
-          {
-            res.send('L');
-            res.send('T');
-          }
-          if (my_player_direction == 'W')
-          {
-            res.send('R');
-            res.send('T');
-          }
-          if (my_player_direction == 'N')
-          {
-            //my_player_stuck_counter =1;
-            res.send('F');
-          }
+        if (my_player_direction == 'E')
+        {
+          res.send('R');
+          res.send('T');
+        }
+        if (my_player_direction == 'W')
+        {
+          res.send('L');
+          res.send('T');
+        }
+        if (my_player_direction == 'S')
+        {
+          //my_player_stuck_counter =1;
+          res.send('F');
+        }
       }
       if (my_player_y == 1)
       {
@@ -176,12 +212,12 @@ app.post('/', function (req, res) {
 
   if (my_player_direction == 'N')
   {
-    if (my_player_x < 5)
+    if (my_player_x < 8)
     {
       res.send('R');
       res.send('T');
     }
-    if (my_player_x == 5)
+    if (my_player_x == 8)
     {
       res.send('L');
       res.send('T');
@@ -190,12 +226,12 @@ app.post('/', function (req, res) {
 
   if (my_player_direction == 'S')
   {
-    if (my_player_x < 5)
+    if (my_player_x < 8)
     {
       res.send('L');
       res.send('T');
     }
-    if (my_player_x == 5)
+    if (my_player_x == 8)
     {
       res.send('R');
       res.send('T');
@@ -204,12 +240,12 @@ app.post('/', function (req, res) {
 
   if (my_player_direction == 'E')
   {
-    if (my_player_x < 5)
+    if (my_player_x < 8)
     {
       res.send('F');
       res.send('T');
     }
-    if (my_player_x == 5)
+    if (my_player_x == 8)
     {
       res.send('L');
       res.send('T');
