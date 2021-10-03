@@ -96,12 +96,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('L');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('R');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'N')
           {
@@ -114,12 +114,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('L');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('R');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'N')
           {
@@ -132,12 +132,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('L');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('R');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'N')
           {
@@ -150,12 +150,12 @@ app.post('/', function (req, res) {
         if (my_player_direction == 'E')
         {
           res.send('R');
-          res.send('T');
+          //res.send('T');
         }
         if (my_player_direction == 'W')
         {
           res.send('L');
-          res.send('T');
+          //res.send('T');
         }
         if (my_player_direction == 'S')
         {
@@ -168,17 +168,17 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('R');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('L');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'S')
           {
             //my_player_stuck_counter =1;
-            res.send('F');
+            //res.send('F');
           }
       }
       if (my_player_y == 0)
@@ -186,12 +186,12 @@ app.post('/', function (req, res) {
           if (my_player_direction == 'E')
           {
             res.send('R');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'W')
           {
             res.send('L');
-            res.send('T');
+            //res.send('T');
           }
           if (my_player_direction == 'S')
           {
@@ -215,12 +215,12 @@ app.post('/', function (req, res) {
     if (my_player_x < 8)
     {
       res.send('R');
-      res.send('T');
+      //res.send('T');
     }
     if (my_player_x == 8)
     {
       res.send('L');
-      res.send('T');
+      //res.send('T');
     }
   }
 
@@ -229,12 +229,12 @@ app.post('/', function (req, res) {
     if (my_player_x < 8)
     {
       res.send('L');
-      res.send('T');
+      //res.send('T');
     }
     if (my_player_x == 8)
     {
       res.send('R');
-      res.send('T');
+      //res.send('T');
     }
   }
 
@@ -243,12 +243,12 @@ app.post('/', function (req, res) {
     if (my_player_x < 8)
     {
       res.send('F');
-      res.send('T');
+      //res.send('T');
     }
     if (my_player_x == 8)
     {
       res.send('L');
-      res.send('T');
+      //res.send('T');
     }
   }
 
@@ -257,12 +257,12 @@ app.post('/', function (req, res) {
     if (my_player_x > 0)
     {
       res.send('F');
-      res.send('T');
+      //res.send('T');
     }
     if (my_player_x == 0)
     {
       res.send('R');
-      res.send('T');
+      //res.send('T');
     }
   }
 
