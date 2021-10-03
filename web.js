@@ -52,7 +52,7 @@ app.post('/', function (req, res) {
     Object.entries(player_data[i]).forEach(([key, val]) => {
         console.log("Player data " + key + ": " + val) 
 
-        if (i == 2) 
+        if (i == 8) 
         {
           if (key == 'x') {
             my_player_x = val;
