@@ -84,7 +84,14 @@ app.post('/', function (req, res) {
 
   //res.send(moves[Math.floor(Math.random() * moves.length)]);
   
-  if (my_player_prev_x == my_player_x & my_player_stuck_counter >= 4)
+  if (my_player_make_a_throw == true)
+  {
+    res.send('T');
+    console.log('Throw made!');
+  } else {
+
+
+    if (my_player_prev_x == my_player_x & my_player_stuck_counter >= 4)
   {
     if (my_player_x != 0 & my_player_x != 8)
     {
@@ -98,12 +105,12 @@ app.post('/', function (req, res) {
             res.send('L');
             //res.send('T');
           }
-          if (my_player_direction == 'W')
+          else if (my_player_direction == 'W')
           {
             res.send('R');
             //res.send('T');
           }
-          if (my_player_direction == 'N')
+          else if (my_player_direction == 'N')
           {
             //my_player_stuck_counter =1;
             res.send('F');
@@ -116,12 +123,12 @@ app.post('/', function (req, res) {
             res.send('L');
             //res.send('T');
           }
-          if (my_player_direction == 'W')
+          else if (my_player_direction == 'W')
           {
             res.send('R');
             //res.send('T');
           }
-          if (my_player_direction == 'N')
+          else if (my_player_direction == 'N')
           {
             //my_player_stuck_counter =1;
             res.send('F');
@@ -134,12 +141,12 @@ app.post('/', function (req, res) {
             res.send('L');
             //res.send('T');
           }
-          if (my_player_direction == 'W')
+          else if (my_player_direction == 'W')
           {
             res.send('R');
             //res.send('T');
           }
-          if (my_player_direction == 'N')
+          else if (my_player_direction == 'N')
           {
             //my_player_stuck_counter =1;
             res.send('F');
@@ -152,12 +159,12 @@ app.post('/', function (req, res) {
           res.send('R');
           //res.send('T');
         }
-        if (my_player_direction == 'W')
+        else if (my_player_direction == 'W')
         {
           res.send('L');
           //res.send('T');
         }
-        if (my_player_direction == 'S')
+        else if (my_player_direction == 'S')
         {
           //my_player_stuck_counter =1;
           res.send('F');
@@ -170,12 +177,12 @@ app.post('/', function (req, res) {
             res.send('R');
             //res.send('T');
           }
-          if (my_player_direction == 'W')
+          else if (my_player_direction == 'W')
           {
             res.send('L');
             //res.send('T');
           }
-          if (my_player_direction == 'S')
+          else if (my_player_direction == 'S')
           {
             //my_player_stuck_counter =1;
             //res.send('F');
@@ -188,12 +195,12 @@ app.post('/', function (req, res) {
             res.send('R');
             //res.send('T');
           }
-          if (my_player_direction == 'W')
+          else if (my_player_direction == 'W')
           {
             res.send('L');
             //res.send('T');
           }
-          if (my_player_direction == 'S')
+          else if (my_player_direction == 'S')
           {
             //my_player_stuck_counter =1;
             res.send('F');
@@ -202,12 +209,6 @@ app.post('/', function (req, res) {
 
     }
   }
-  
-  if (my_player_make_a_throw == true)
-  {
-    res.send('T');
-    console.log('Throw made!');
-  } else {
 
 
   if (my_player_direction == 'N')
