@@ -24,6 +24,11 @@ app.post('/', function (req, res) {
   var player_urls = [];
   var player_data = [];
 
+  //set my player name
+  var my_player_name;
+
+  my_player_name = 'https://gcpbotgame-jl6m2wkduq-uc.a.run.app'
+
   //temp my player x and y
   var my_player_x;
   //var my_player_prev_x;
@@ -52,7 +57,7 @@ app.post('/', function (req, res) {
     Object.entries(player_data[i]).forEach(([key, val]) => {
         console.log("Player data " + key + ": " + val) 
 
-        if (i == 8) 
+        if (player_urls[i] == my_player_name) 
         {
           if (key == 'x') {
             my_player_x = val;
@@ -91,7 +96,7 @@ app.post('/', function (req, res) {
   } else {
 
 
-    if (my_player_prev_x == my_player_x & my_player_stuck_counter >= 4)
+  if (my_player_prev_x == my_player_x & my_player_stuck_counter >= 4)
   {
     if (my_player_x != 0 & my_player_x != 8)
     {
