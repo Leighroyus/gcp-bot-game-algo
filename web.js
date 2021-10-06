@@ -38,8 +38,15 @@ app.post('/', function (req, res) {
 
   var hi_score_player_name;
   var hi_score_player_score;
-  var temp_previous_score;
+  var hi_score_player_x;
+  var hi_score_player_y;
+  var hi_score_player_direction;
+  
+  var temp_x;
+  var temp_y;
+  var temp_direction;
   var temp_current_score;
+  var temp_previous_score;
   temp_previous_score = 0;
 
   const current_time = new Date();
@@ -62,6 +69,17 @@ app.post('/', function (req, res) {
 
     Object.entries(player_data[i]).forEach(([key, val]) => {
         console.log("Player data " + key + ": " + val) 
+
+        //temp storage of player data
+        if (key == 'x') {
+          temp_x = val;
+        }
+        if (key == 'y') {
+          temp_y = val;
+        }
+        if (key == 'direction') {
+          temp_direction = val; 
+        }
 
         //get my player's data
         if (player_urls[i] == my_player_name) 
@@ -86,14 +104,24 @@ app.post('/', function (req, res) {
           hi_score_player_name = player_urls[i]
           hi_score_player_score = temp_current_score
           temp_previous_score = temp_current_score
-        }
+        }    
 
     });
+
+    if (player_urls[i] == hi_score_player_name)
+    {
+      hi_score_player_x = temp_x;
+      hi_score_player_y = temp_y;
+      hi_score_player_direction = temp_direction;
+    }
 
   }
 
   console.log('Player with the highest score: ' + hi_score_player_name + ', with a score of: ' + hi_score_player_score)
-
+  console.log('Player with the highest score - X Pos: ' + hi_score_player_x)
+  console.log('Player with the highest score - Y Pos: ' + hi_score_player_y)
+  console.log('Player with the highest score - Direction: ' + hi_score_player_direction)
+  
   console.log('My player x: ' + my_player_x)
   console.log('My player y: ' + my_player_y)
   console.log('My player direction: ' + my_player_direction)
