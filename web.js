@@ -23,6 +23,10 @@ function MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x){
       return 'Left';
 };
 
+//function WhereCanMyPlayerMove(other_player_to_left,other_player_to_right,other_player_above,other_player_below){
+
+//};
+
 
 my_player_prev_x = 999;
 my_player_stuck_counter = 1;
@@ -54,6 +58,7 @@ app.post('/', function (req, res) {
   var my_player_y;
   var my_player_direction;
   var my_player_make_a_throw;
+  var my_player_index;
 
   var hi_score_player_name;
   var hi_score_player_score;
@@ -67,6 +72,11 @@ app.post('/', function (req, res) {
   var temp_current_score;
   var temp_previous_score;
   temp_previous_score = 0;
+
+  var other_player_to_left = 0;
+  var other_player_to_right = 0;
+  var other_player_above = 0;
+  var other_player_below = 0;
 
   const current_time = new Date();
 
@@ -101,7 +111,10 @@ app.post('/', function (req, res) {
         }
 
         //get my player's data
-        if (player_urls[i] == my_player_name) 
+        if (player_urls[i] == my_player_name)
+
+        my_player_index = i;
+
         {
           if (key == 'x') {
             my_player_x = val;
@@ -136,6 +149,45 @@ app.post('/', function (req, res) {
 
   }
 
+  for (var i = 0; i < player_data.length; i++) {
+    Object.entries(player_data[i]).forEach(([key, val]) => {
+          if (i != my_player_index)
+          {
+              //temp storage of player data
+              if (key == 'x') {
+
+                if (val == my_player_x + 1)
+                {
+                  //player to the right
+                  other_player_to_right = 1;
+                }
+                if (val == my_player_x - 1)
+                {
+                  //player to the left
+                  other_player_to_left = 1;
+                }
+
+              }
+              if (key == 'y') {
+                
+                if (val == my_player_y + 1)
+                {
+                  //player below me
+                  other_player_below = 1;
+                }
+                if (val == my_player_y - 1)
+                {
+                  //player above me
+                  other_player_above = 1;
+                }
+
+              }
+          }
+
+    })
+
+  }
+
   console.log('Player with the highest score: ' + hi_score_player_name + ', with a score of: ' + hi_score_player_score)
   console.log('Player with the highest score - X Pos: ' + hi_score_player_x)
   console.log('Player with the highest score - Y Pos: ' + hi_score_player_y)
@@ -150,6 +202,25 @@ app.post('/', function (req, res) {
   
   //next decide if my player is to the Left, the Same or to the Right of the hi score player 
   console.log('My player horizontally is to the [' + MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x) + '] of the high score player.')
+
+  //check if any player is will block my move
+  //get direction that my player can move that is free from another player
+  if (other_player_to_left == 1)
+  {
+    console.log('My player CANT move LEFT');
+  }
+  if (other_player_to_right == 1)
+  {
+    console.log('My player CANT move RIGHT');
+  }
+  if (other_player_above == 1)
+  {
+    console.log('My player CANT move UP');
+  }
+  if (other_player_below == 1)
+  {
+    console.log('My player CANT move DOWN');
+  }
 
   if (my_player_make_a_throw == true)
   {
