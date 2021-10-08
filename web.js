@@ -14,6 +14,16 @@ function MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y){
       return 'Above';
 };
 
+function MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x){
+  if (my_player_x > hi_score_player_x)
+      return 'Right';
+  else if (my_player_x == hi_score_player_x)
+      return 'Same';
+  else if (my_player_x < hi_score_player_x)
+      return 'Left';
+};
+
+
 my_player_prev_x = 999;
 my_player_stuck_counter = 1;
 
@@ -135,9 +145,12 @@ app.post('/', function (req, res) {
   console.log('My player y: ' + my_player_y)
   console.log('My player direction: ' + my_player_direction)
 
-  //first decide if hi_score_player is above or below my player
-  console.log('My player is [' + MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) + '] the high score player.')
+  //first decide if my player is Below, the Same or Above the hi score player 
+  console.log('My player vertically is [' + MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) + '] the high score player.')
   
+  //next decide if my player is to the Left, the Same or to the Right of the hi score player 
+  console.log('My player horizontally is to the [' + MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x) + '] of the high score player.')
+
   if (my_player_make_a_throw == true)
   {
     res.send('T');
