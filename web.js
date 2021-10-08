@@ -5,6 +5,15 @@ function isEven(value){
       return false;
 };
 
+function MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y){
+  if (my_player_y > hi_score_player_y)
+      return 'Below';
+  else if (my_player_y == hi_score_player_y)
+      return 'Same';
+  else if (my_player_y < hi_score_player_y)
+      return 'Above';
+};
+
 my_player_prev_x = 999;
 my_player_stuck_counter = 1;
 
@@ -126,16 +135,8 @@ app.post('/', function (req, res) {
   console.log('My player y: ' + my_player_y)
   console.log('My player direction: ' + my_player_direction)
 
-  //movement test
-  //always move right
-
-  const moves = ['F', 'T', 'L', 'R'];
-
-  //var moves_to_send = moves[Math.floor(Math.random() * moves.length)]
-
-  //console.log("What do these moves look like: " + moves_to_send)
-
-  //res.send(moves[Math.floor(Math.random() * moves.length)]);
+  //first decide if hi_score_player is above or below my player
+  console.log('My player is [' + MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) + '] the high score player.')
   
   if (my_player_make_a_throw == true)
   {
