@@ -151,41 +151,43 @@ app.post('/', function (req, res) {
 
   for (var i = 0; i < player_data.length; i++) {
     Object.entries(player_data[i]).forEach(([key, val]) => {
-          if (i != my_player_index)
-          {
-              //temp storage of player data
-              if (key == 'x') {
-
-                if (val == my_player_x + 1)
-                {
-                  //player to the right
-                  other_player_to_right = 1;
-                }
-                if (val == my_player_x - 1)
-                {
-                  //player to the left
-                  other_player_to_left = 1;
-                }
-
-              }
-              if (key == 'y') {
-                
-                if (val == my_player_y + 1)
-                {
-                  //player below me
-                  other_player_below = 1;
-                }
-                if (val == my_player_y - 1)
-                {
-                  //player above me
-                  other_player_above = 1;
-                }
-
-              }
-          }
-
+      
+      if (key == 'x') {
+        temp_x = val;
+      }
+      if (key == 'y') {
+        temp_y = val;
+      }
     })
 
+    if (i != my_player_index)
+    {
+
+
+          if (temp_x == my_player_x + 1 && temp_y == my_player_y)
+          {
+            //player to the right
+            other_player_to_right = 1;
+          }
+          if (temp_x == my_player_x - 1 && temp_y == my_player_y)
+          {
+            //player to the left
+            other_player_to_left = 1;
+          }
+          
+          if (temp_y == my_player_y + 1 && temp_x == my_player_x)
+          {
+            //player below me
+            other_player_below = 1;
+          }
+          if (temp_y == my_player_y - 1 && temp_x == my_player_x)
+          {
+            //player above me
+            other_player_above = 1;
+          }
+
+        
+    }
   }
 
   console.log('Player with the highest score: ' + hi_score_player_name + ', with a score of: ' + hi_score_player_score)
