@@ -232,20 +232,24 @@ app.post('/', function (req, res) {
      {
         if(my_player_direction == 'N')
         {
+          console.log('** DEGUB case 1 **')
           res.send('R');
         }
         if(my_player_direction == 'S')
         {
+          console.log('** DEGUB case 2 **')
           res.send('L');
         }
         if(my_player_direction == 'W')
         {
+          console.log('** DEGUB case 3 **')
           res.send('R');
         }
      }
      //is facing at the high score player - make a throw!
      if (my_player_direction == 'E')
      {
+      console.log('** DEGUB case 4 **')
         res.send('T');
      }
   } 
@@ -256,20 +260,24 @@ app.post('/', function (req, res) {
     {
        if(my_player_direction == 'N')
        {
+        console.log('** DEGUB case 5 **')
          res.send('L');
        }
        if(my_player_direction == 'S')
        {
+        console.log('** DEGUB case 6 **')
          res.send('R');
        }
        if(my_player_direction == 'E')
        {
+        console.log('** DEGUB case 7 **')
          res.send('L');
        }
     }
     //is facing at the high score player - make a throw!
     if (my_player_direction == 'W')
     {
+      console.log('** DEGUB case 7 **')
        res.send('T');
     }
 
@@ -281,20 +289,24 @@ app.post('/', function (req, res) {
     {
        if(my_player_direction == 'N')
        {
+        console.log('** DEGUB case 8 **')
          res.send('L');
        }
        if(my_player_direction == 'E')
        {
+        console.log('** DEGUB case 9 **')
          res.send('R');
        }
        if(my_player_direction == 'W')
        {
+        console.log('** DEGUB case 10 **')
          res.send('L');
        }
     }
     //is facing at the high score player - make a throw!
     if (my_player_direction == 'S')
     {
+      console.log('** DEGUB case 11 **')
        res.send('T');
     }
 
@@ -306,20 +318,24 @@ app.post('/', function (req, res) {
     {
        if(my_player_direction == 'S')
        {
+        console.log('** DEGUB case 12 **')
          res.send('R');
        }
        if(my_player_direction == 'E')
        {
+        console.log('** DEGUB case 13 **')
          res.send('L');
        }
        if(my_player_direction == 'W')
        {
+        console.log('** DEGUB case 14 **')
          res.send('R');
        }
     }
     //is facing at the high score player - make a throw!
     if (my_player_direction == 'N')
     {
+      console.log('** DEGUB case 15 **')
        res.send('T');
     }
 
@@ -334,20 +350,24 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'N')
                   {
+                    console.log('** DEGUB case 16 **')
                     res.send('L');
                   }
                   if(my_player_direction == 'E')
                   {
+                    console.log('** DEGUB case 17 **')
                     res.send('R');
                   }
                   if(my_player_direction == 'W')
                   {
+                    console.log('** DEGUB case 18 **')
                     res.send('L');
                   }
               }
               //if player is heading in the required direction then move forward
               if (my_player_direction == 'S')
               {
+                console.log('** DEGUB case 19 **')
                 res.send('F');
               }
         }
@@ -359,20 +379,24 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'S')
                   {
+                    console.log('** DEGUB case 20 **')
                     res.send('R');
                   }
                   if(my_player_direction == 'E')
                   {
+                    console.log('** DEGUB case 21 **')
                     res.send('L');
                   }
                   if(my_player_direction == 'W')
                   {
+                    console.log('** DEGUB case 22 **')
                     res.send('R');
                   }
               }
               //if player is heading in the required direction then move forward
               if (my_player_direction == 'N')
               {
+                console.log('** DEGUB case 23 **')
                 res.send('F');
               }
         }
@@ -384,20 +408,24 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'N')
                   {
+                    console.log('** DEGUB case 24 **')
                     res.send('R');
                   }
                   if(my_player_direction == 'S')
                   {
+                    console.log('** DEGUB case 25 **')
                     res.send('L');
                   }
                   if(my_player_direction == 'W')
                   {
+                    console.log('** DEGUB case 26 **')
                     res.send('R');
                   }
               }
             //if player is heading in the required direction then move forward
             if (my_player_direction == 'E')
             {
+              console.log('** DEGUB case 27 **')
               res.send('F');
             }
         }
@@ -408,20 +436,24 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'N')
                   {
+                    console.log('** DEGUB case 28 **')
                     res.send('L');
                   }
                   if(my_player_direction == 'S')
                   {
+                    console.log('** DEGUB case 29 **')
                     res.send('R');
                   }
                   if(my_player_direction == 'E')
                   {
+                    console.log('** DEGUB case 30 **')
                     res.send('L');
                   }
               }
               //is facing at the high score player - make a throw!
               if (my_player_direction == 'W')
               {
+                console.log('** DEGUB case 31 **')
                 res.send('F');
               } 
         }
