@@ -343,7 +343,7 @@ app.post('/', function (req, res) {
   //hunt hi score player
   else {
 
-        if (MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) == 'Below')
+        if (MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) == 'Above')
         {
               //check if my player is facing South
               if (my_player_direction != 'S')
@@ -372,7 +372,7 @@ app.post('/', function (req, res) {
               }
         }
 
-        if (MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) == 'Above')
+        if (MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) == 'Below')
         {
               //check if my player is facing North
               if (my_player_direction != 'N')
