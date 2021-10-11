@@ -78,12 +78,12 @@ app.post('/', function (req, res) {
   var other_player_above = 0;
   var other_player_below = 0;
 
-  const current_time = new Date();
+  //const current_time = new Date();
 
   //console.log(current_time.getSeconds());
 
-  my_player_make_a_throw = isEven(current_time.getSeconds())
-  console.log('Make a throw: ' + isEven(current_time.getSeconds()))
+  //my_player_make_a_throw = isEven(current_time.getSeconds())
+  //console.log('Make a throw: ' + isEven(current_time.getSeconds()))
 
   Object.entries(req.body.arena.state).forEach(([key, val]) => {
 
@@ -190,20 +190,20 @@ app.post('/', function (req, res) {
     }
   }
 
-  console.log('Player with the highest score: ' + hi_score_player_name + ', with a score of: ' + hi_score_player_score)
-  console.log('Player with the highest score - X Pos: ' + hi_score_player_x)
-  console.log('Player with the highest score - Y Pos: ' + hi_score_player_y)
-  console.log('Player with the highest score - Direction: ' + hi_score_player_direction)
+  //console.log('Player with the highest score: ' + hi_score_player_name + ', with a score of: ' + hi_score_player_score)
+  //console.log('Player with the highest score - X Pos: ' + hi_score_player_x)
+  //console.log('Player with the highest score - Y Pos: ' + hi_score_player_y)
+  //console.log('Player with the highest score - Direction: ' + hi_score_player_direction)
   
-  console.log('My player x: ' + my_player_x)
-  console.log('My player y: ' + my_player_y)
-  console.log('My player direction: ' + my_player_direction)
+  //console.log('My player x: ' + my_player_x)
+  //console.log('My player y: ' + my_player_y)
+  //console.log('My player direction: ' + my_player_direction)
 
   //first decide if my player is Below, the Same or Above the hi score player 
-  console.log('My player vertically is [' + MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) + '] the high score player.')
+  //console.log('My player vertically is [' + MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) + '] the high score player.')
   
   //next decide if my player is to the Left, the Same or to the Right of the hi score player 
-  console.log('My player horizontally is to the [' + MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x) + '] of the high score player.')
+  //console.log('My player horizontally is to the [' + MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x) + '] of the high score player.')
 
   //check if any player is will block my move
   //get direction that my player can move that is free from another player
