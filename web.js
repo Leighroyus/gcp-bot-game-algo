@@ -224,6 +224,213 @@ app.post('/', function (req, res) {
     console.log('My player CANT move DOWN');
   }
 
+  //check if my player can throw at the high score player
+  if((my_player_x + 1 == hi_score_player_x) || (my_player_x + 2 == hi_score_player_x))
+  {
+     //check if my player is facing East
+     if (my_player_direction != 'E')
+     {
+        if(my_player_direction == 'N')
+        {
+          res.send('R');
+        }
+        if(my_player_direction == 'S')
+        {
+          res.send('L');
+        }
+        if(my_player_direction == 'W')
+        {
+          res.send('R');
+        }
+     }
+     //is facing at the high score player - make a throw!
+     if (my_player_direction == 'E')
+     {
+        res.send('T');
+     }
+  } 
+  else if ((my_player_x - 1 == hi_score_player_x) || (my_player_x - 2 == hi_score_player_x))
+  {
+    //check if my player is facing West
+    if (my_player_direction != 'W')
+    {
+       if(my_player_direction == 'N')
+       {
+         res.send('L');
+       }
+       if(my_player_direction == 'S')
+       {
+         res.send('R');
+       }
+       if(my_player_direction == 'E')
+       {
+         res.send('L');
+       }
+    }
+    //is facing at the high score player - make a throw!
+    if (my_player_direction == 'W')
+    {
+       res.send('T');
+    }
+
+  }
+  else if ((my_player_y + 1 == hi_score_player_y) || (my_player_y + 2 == hi_score_player_y))
+  {
+    //check if my player is facing South
+    if (my_player_direction != 'S')
+    {
+       if(my_player_direction == 'N')
+       {
+         res.send('L');
+       }
+       if(my_player_direction == 'E')
+       {
+         res.send('R');
+       }
+       if(my_player_direction == 'W')
+       {
+         res.send('L');
+       }
+    }
+    //is facing at the high score player - make a throw!
+    if (my_player_direction == 'S')
+    {
+       res.send('T');
+    }
+
+  }
+  else if ((my_player_y - 1 == hi_score_player_y) || (my_player_y - 2 == hi_score_player_y))
+  {
+    //check if my player is facing North
+    if (my_player_direction != 'N')
+    {
+       if(my_player_direction == 'S')
+       {
+         res.send('R');
+       }
+       if(my_player_direction == 'E')
+       {
+         res.send('L');
+       }
+       if(my_player_direction == 'W')
+       {
+         res.send('R');
+       }
+    }
+    //is facing at the high score player - make a throw!
+    if (my_player_direction == 'N')
+    {
+       res.send('T');
+    }
+
+  }
+  //hunt hi score player
+  else {
+
+        if (MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) == 'Below')
+        {
+              //check if my player is facing South
+              if (my_player_direction != 'S')
+              {
+                  if(my_player_direction == 'N')
+                  {
+                    res.send('L');
+                  }
+                  if(my_player_direction == 'E')
+                  {
+                    res.send('R');
+                  }
+                  if(my_player_direction == 'W')
+                  {
+                    res.send('L');
+                  }
+              }
+              //if player is heading in the required direction then move forward
+              if (my_player_direction == 'S')
+              {
+                res.send('F');
+              }
+        }
+
+        if (MyPlayerY_to_HiScorePlayerY(my_player_y,hi_score_player_y) == 'Above')
+        {
+              //check if my player is facing North
+              if (my_player_direction != 'N')
+              {
+                  if(my_player_direction == 'S')
+                  {
+                    res.send('R');
+                  }
+                  if(my_player_direction == 'E')
+                  {
+                    res.send('L');
+                  }
+                  if(my_player_direction == 'W')
+                  {
+                    res.send('R');
+                  }
+              }
+              //if player is heading in the required direction then move forward
+              if (my_player_direction == 'N')
+              {
+                res.send('F');
+              }
+        }
+
+        if(MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x) == 'Left')
+        {
+              //check if my player is facing East
+              if (my_player_direction != 'E')
+              {
+                  if(my_player_direction == 'N')
+                  {
+                    res.send('R');
+                  }
+                  if(my_player_direction == 'S')
+                  {
+                    res.send('L');
+                  }
+                  if(my_player_direction == 'W')
+                  {
+                    res.send('R');
+                  }
+              }
+            //if player is heading in the required direction then move forward
+            if (my_player_direction == 'E')
+            {
+              res.send('F');
+            }
+        }
+
+        if(MyPlayerX_to_HiScorePlayerX(my_player_x,hi_score_player_x) == 'Right')
+        {
+              if (my_player_direction != 'W')
+              {
+                  if(my_player_direction == 'N')
+                  {
+                    res.send('L');
+                  }
+                  if(my_player_direction == 'S')
+                  {
+                    res.send('R');
+                  }
+                  if(my_player_direction == 'E')
+                  {
+                    res.send('L');
+                  }
+              }
+              //is facing at the high score player - make a throw!
+              if (my_player_direction == 'W')
+              {
+                res.send('F');
+              } 
+        }
+
+
+  }
+
+  //old code
+  /*
   if (my_player_make_a_throw == true)
   {
     res.send('T');
@@ -395,6 +602,7 @@ if ((my_player_stuck_counter % 5) == 0)
 {
   my_player_stuck_counter = 1;
 }
+*/
 
 });
 
