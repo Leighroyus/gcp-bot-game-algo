@@ -225,7 +225,7 @@ app.post('/', function (req, res) {
   }
 
   //check if my player can throw at the high score player
-  if((my_player_x + 1 == hi_score_player_x) || (my_player_x + 2 == hi_score_player_x))
+  if(((my_player_x + 1 == hi_score_player_x) || (my_player_x + 2 == hi_score_player_x)) && my_player_y == hi_score_player_y)
   {
      //check if my player is facing East
      if (my_player_direction != 'E')
@@ -253,7 +253,7 @@ app.post('/', function (req, res) {
         res.send('T');
      }
   } 
-  else if ((my_player_x - 1 == hi_score_player_x) || (my_player_x - 2 == hi_score_player_x))
+  else if (((my_player_x - 1 == hi_score_player_x) || (my_player_x - 2 == hi_score_player_x)) && my_player_y == hi_score_player_y)
   {
     //check if my player is facing West
     if (my_player_direction != 'W')
@@ -282,7 +282,7 @@ app.post('/', function (req, res) {
     }
 
   }
-  else if ((my_player_y + 1 == hi_score_player_y) || (my_player_y + 2 == hi_score_player_y))
+  else if (((my_player_y + 1 == hi_score_player_y) || (my_player_y + 2 == hi_score_player_y)) && my_player_x == hi_score_player_x)
   {
     //check if my player is facing South
     if (my_player_direction != 'S')
@@ -311,7 +311,7 @@ app.post('/', function (req, res) {
     }
 
   }
-  else if ((my_player_y - 1 == hi_score_player_y) || (my_player_y - 2 == hi_score_player_y))
+  else if (((my_player_y - 1 == hi_score_player_y) || (my_player_y - 2 == hi_score_player_y)) && my_player_x == hi_score_player_x)
   {
     //check if my player is facing North
     if (my_player_direction != 'N')
