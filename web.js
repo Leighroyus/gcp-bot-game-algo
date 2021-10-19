@@ -232,25 +232,29 @@ app.post('/', function (req, res) {
      {
         if(my_player_direction == 'N')
         {
-          console.log('** DEGUB case 1 **')
+          console.log('** DEBUG case 1 **')
           res.send('R');
+          return;
         }
         if(my_player_direction == 'S')
         {
-          console.log('** DEGUB case 2 **')
+          console.log('** DEBUG case 2 **')
           res.send('L');
+          return;
         }
         if(my_player_direction == 'W')
         {
-          console.log('** DEGUB case 3 **')
+          console.log('** DEBUG case 3 **')
           res.send('R');
+          return;
         }
      }
      //is facing at the high score player - make a throw!
      if (my_player_direction == 'E')
      {
-      console.log('** DEGUB case 4 **')
+      console.log('** DEBUG case 4 **')
         res.send('T');
+        return;
      }
   } 
   else if (((my_player_x - 1 == hi_score_player_x) || (my_player_x - 2 == hi_score_player_x)) && my_player_y == hi_score_player_y)
@@ -260,25 +264,29 @@ app.post('/', function (req, res) {
     {
        if(my_player_direction == 'N')
        {
-        console.log('** DEGUB case 5 **')
+        console.log('** DEBUG case 5 **')
          res.send('L');
+         return;
        }
        if(my_player_direction == 'S')
        {
-        console.log('** DEGUB case 6 **')
+        console.log('** DEBUG case 6 **')
          res.send('R');
+         return;
        }
        if(my_player_direction == 'E')
        {
-        console.log('** DEGUB case 7 **')
+        console.log('** DEBUG case 7 **')
          res.send('L');
+         return;
        }
     }
     //is facing at the high score player - make a throw!
     if (my_player_direction == 'W')
     {
-      console.log('** DEGUB case 7 **')
+      console.log('** DEBUG case 7 **')
        res.send('T');
+       return;
     }
 
   }
@@ -289,25 +297,29 @@ app.post('/', function (req, res) {
     {
        if(my_player_direction == 'N')
        {
-        console.log('** DEGUB case 8 **')
+        console.log('** DEBUG case 8 **')
          res.send('L');
+         return;
        }
        if(my_player_direction == 'E')
        {
-        console.log('** DEGUB case 9 **')
+        console.log('** DEBUG case 9 **')
          res.send('R');
+         return;
        }
        if(my_player_direction == 'W')
        {
-        console.log('** DEGUB case 10 **')
+        console.log('** DEBUG case 10 **')
          res.send('L');
+         return;
        }
     }
     //is facing at the high score player - make a throw!
     if (my_player_direction == 'S')
     {
-      console.log('** DEGUB case 11 **')
+      console.log('** DEBUG case 11 **')
        res.send('T');
+       return;
     }
 
   }
@@ -318,25 +330,29 @@ app.post('/', function (req, res) {
     {
        if(my_player_direction == 'S')
        {
-        console.log('** DEGUB case 12 **')
+        console.log('** DEBUG case 12 **')
          res.send('R');
+         return;
        }
        if(my_player_direction == 'E')
        {
-        console.log('** DEGUB case 13 **')
+        console.log('** DEBUG case 13 **')
          res.send('L');
+         return;
        }
        if(my_player_direction == 'W')
        {
-        console.log('** DEGUB case 14 **')
+        console.log('** DEBUG case 14 **')
          res.send('R');
+         return;
        }
     }
     //is facing at the high score player - make a throw!
     if (my_player_direction == 'N')
     {
-      console.log('** DEGUB case 15 **')
+      console.log('** DEBUG case 15 **')
        res.send('T');
+       return;
     }
 
   }
@@ -350,25 +366,29 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'N')
                   {
-                    console.log('** DEGUB case 16 **')
+                    console.log('** DEBUG case 16 **')
                     res.send('L');
+                    return;
                   }
                   if(my_player_direction == 'E')
                   {
-                    console.log('** DEGUB case 17 **')
+                    console.log('** DEBUG case 17 **')
                     res.send('R');
+                    return;
                   }
                   if(my_player_direction == 'W')
                   {
-                    console.log('** DEGUB case 18 **')
+                    console.log('** DEBUG case 18 **')
                     res.send('L');
+                    return;
                   }
               }
               //if player is heading in the required direction then move forward
               if (my_player_direction == 'S')
               {
-                console.log('** DEGUB case 19 **')
+                console.log('** DEBUG case 19 **')
                 res.send('F');
+                return;
               }
         }
 
@@ -379,25 +399,29 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'S')
                   {
-                    console.log('** DEGUB case 20 **')
+                    console.log('** DEBUG case 20 **')
                     res.send('R');
+                    return;
                   }
                   if(my_player_direction == 'E')
                   {
-                    console.log('** DEGUB case 21 **')
+                    console.log('** DEBUG case 21 **')
                     res.send('L');
+                    return;
                   }
                   if(my_player_direction == 'W')
                   {
-                    console.log('** DEGUB case 22 **')
+                    console.log('** DEBUG case 22 **')
                     res.send('R');
+                    return;
                   }
               }
               //if player is heading in the required direction then move forward
               if (my_player_direction == 'N')
               {
-                console.log('** DEGUB case 23 **')
+                console.log('** DEBUG case 23 **')
                 res.send('F');
+                return;
               }
         }
 
@@ -408,25 +432,29 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'N')
                   {
-                    console.log('** DEGUB case 24 **')
+                    console.log('** DEBUG case 24 **')
                     res.send('R');
+                    return;
                   }
                   if(my_player_direction == 'S')
                   {
-                    console.log('** DEGUB case 25 **')
+                    console.log('** DEBUG case 25 **')
                     res.send('L');
+                    return;
                   }
                   if(my_player_direction == 'W')
                   {
-                    console.log('** DEGUB case 26 **')
+                    console.log('** DEBUG case 26 **')
                     res.send('R');
+                    return;
                   }
               }
             //if player is heading in the required direction then move forward
             if (my_player_direction == 'E')
             {
-              console.log('** DEGUB case 27 **')
+              console.log('** DEBUG case 27 **')
               res.send('F');
+              return;
             }
         }
 
@@ -436,30 +464,37 @@ app.post('/', function (req, res) {
               {
                   if(my_player_direction == 'N')
                   {
-                    console.log('** DEGUB case 28 **')
+                    console.log('** DEBUG case 28 **')
                     res.send('L');
+                    return;
                   }
                   if(my_player_direction == 'S')
                   {
-                    console.log('** DEGUB case 29 **')
+                    console.log('** DEBUG case 29 **')
                     res.send('R');
+                    return;
                   }
                   if(my_player_direction == 'E')
                   {
-                    console.log('** DEGUB case 30 **')
+                    console.log('** DEBUG case 30 **')
                     res.send('L');
+                    return;
                   }
               }
               //is facing at the high score player - make a throw!
               if (my_player_direction == 'W')
               {
-                console.log('** DEGUB case 31 **')
+                console.log('** DEBUG case 31 **')
                 res.send('F');
+                return;
               } 
         }
 
 
   }
+
+  console.log('** DEBUG case 32 **')
+  res.send('T');
 
   //old code
   /*
@@ -641,4 +676,4 @@ if ((my_player_stuck_counter % 5) == 0)
 app.listen(process.env.PORT || 8080);
 
 
-// { "_links": { "self": { "href": "https://gcpbotgame-jl6m2wkduq-uc.a.run.app" } }, "arena": { "dims": [6, 4], "state": { "https://cloud-game-random-bot-z3eu2gxmuq-uc.a.run.app": { "x": 4, "y": 3, "direction": "W", "wasHit": true, "score": -329 }, "https://cloudbowl-samples-nodejs-jl6m2wkduq-uc.a.run.app": { "x": 5, "y": 3, "direction": "S", "wasHit": false, "score": -77 }, "https://gcpbotgame-jl6m2wkduq-uc.a.run.app": { "x": 4, "y": 2, "direction": "W", "wasHit": false, "score": -122 }, "https://cloudbowl-samples-nodejs-45hqnxtrtq-uc.a.run.app": { "x": 2, "y": 3, "direction": "E", "wasHit": false, "score": 528 } } } }
+// `{ "_links": { "self": { "href": "https://gcpbotgame-jl6m2wkduq-uc.a.run.app" } }, "arena": { "dims": [6, 4], "state": { "https://cloud-game-random-bot-z3eu2gxmuq-uc.a.run.app": { "x": 4, "y": 3, "direction": "W", "wasHit": true, "score": -329 }, "https://cloudbowl-samples-nodejs-jl6m2wkduq-uc.a.run.app": { "x": 5, "y": 3, "direction": "S", "wasHit": false, "score": -77 }, "https://gcpbotgame-jl6m2wkduq-uc.a.run.app": { "x": 4, "y": 2, "direction": "W", "wasHit": false, "score": -122 }, "https://cloudbowl-samples-nodejs-45hqnxtrtq-uc.a.run.app": { "x": 2, "y": 3, "direction": "E", "wasHit": false, "score": 528 } } } }`
